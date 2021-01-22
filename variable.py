@@ -1,3 +1,5 @@
-# Stores the variable "playerName" so it can be represented by user imput and be used for the shotchart.py file
+# Stores the variables needed to run player_info.py
 
 playerName = ""
+seasonYear = ""
+seasonType = ""
