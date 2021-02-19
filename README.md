@@ -1,2 +1,2 @@
-# shotchart-visualizer
-A program that displays the various locations and amount of times an NBA player has taken a shot in the half court.
+# Shot Clock
+A Django-based web app that displays player statistics of a chosen NBA player
