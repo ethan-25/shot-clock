@@ -1,0 +1,40 @@
+body {
+  background-color: #10151c;
+  color: #f0f5f8;
+}
+
+.centered-column {
+  width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f0f5f8;
+  box-shadow: 12px 12px #e52232;
+}
+
+.sub {
+  margin-left: 50%;
+  transform: translate(-25%, 0);
+}
+
+.btn-danger {
+  border-color: #e52232;
+  background-color: #e52232;
+}
+
+.row-element {
+  padding: 10px;
+  color: #f0f5f8;
+  border-radius: 5px;
+  background-color: #1a2129;
+}
+
+.input-fields {
+  margin-left: 2.5rem;
+}
+
+/* View Player */
+
+.recent {
+  width: 45%;
+}
