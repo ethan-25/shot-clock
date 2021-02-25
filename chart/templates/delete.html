@@ -16,7 +16,7 @@
   </head>
   <body>
     <div class="centered-column">
-      <p>Delete chart for {{player.player_name}}?</p>
+      <p style="color: black">Delete chart for {{player.player_name}}?</p>
       <form method="POST" action="">
         {% csrf_token %}
         <input class="btn btn-warning" type="submit" name="Yes" />

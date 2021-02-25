@@ -1,6 +1,7 @@
 body {
   background-color: #10151c;
   color: #f0f5f8;
+  font-family: "Inter", sans-serif;
 }
 
 .centered-column {
@@ -34,7 +35,24 @@ body {
 }
 
 /* View Player */
+.player-card {
+  width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
 
-.recent {
-  width: 45%;
+.player-headshot {
+  background-size: 5rem;
+  background-repeat: no-repeat;
+  background-position: 0 1rem;
+}
+
+.player-name {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.bold {
+  font-size: 30px;
+  font-weight: 600;
 }

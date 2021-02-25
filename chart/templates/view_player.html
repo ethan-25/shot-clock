@@ -10,81 +10,145 @@
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
     {% load static %} {% load crispy_forms_tags %}
     <link rel="stylesheet" href="{% static 'styles.css' %}" />
     <title>Shot Clock | {{Player}}</title>
   </head>
   <body>
-    <div class="info">
-      <h1>{{Player}} {{SeasonYear}} {{SeasonType}}</h1>
-      <img
-        src="https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/{{PlayerID}}.png"
-      />
+    <div class="player-card container">
+      <a href="{% url 'home' %}" class="btn btn-primary btn-lg">Shot Clock</a>
+      <div class="row" style="border-bottom: 1px solid #373b3e">
+        <div class="col">
+          <div
+            class="player-headshot"
+            style="background-image: url(https://cdn.nba.com/logos/nba/{{PlayerInfo.18}}/primary/L/logo.svg);"
+          >
+            <img
+              src="https://ak-static.cms.nba.com/wp-content/uploads/headshots/nba/latest/260x190/{{PlayerID}}.png"
+            />
+            <p class="player-name">{{PlayerInfo.1}} {{PlayerInfo.2}}</p>
+            <p class="bold">#{{PlayerInfo.14}} | {{PlayerInfo.15}}</p>
+          </div>
+        </div>
+        <div class="col">
+          <p class="bold">About</p>
+          <p>Height: {{PlayerInfo.11}}<br />Weight: {{PlayerInfo.12}}lb</p>
+          <p>Country: {{PlayerInfo.9}}<br />Last Attended: {{PlayerInfo.8}}</p>
+          <p>
+            Draft: {{PlayerInfo.29}} | Round {{PlayerInfo.30}}, Pick
+            {{PlayerInfo.31}}
+          </p>
+        </div>
+        <div class="col">
+          <p class="bold">Next Game</p>
+          <table class="table table-dark">
+            <tbody>
+              <tr>
+                <th scope="row">Date</th>
+                <td>{{NextGame.1}}, {{NextGame.10}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Matchup</th>
+                <td>{{NextGame.6}} @ {{NextGame.7}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <p class="bold">Recent Game Stats</p>
+        <table class="table table-dark">
+          <tbody>
+            <tr>
+              <th scope="row">Date</th>
+              <td>{{RecentGame.3}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Matchup</th>
+              <td>{{RecentGame.4}}</td>
+            </tr>
+            <tr>
+              <th scope="row">Result</th>
+              <td>{{RecentGame.5}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <br />
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">MIN</th>
+              <th scope="col">PTS</th>
+              <th scope="col">FGM-A</th>
+              <th scope="col">3PM-A</th>
+              <th scope="col">FTM-A</th>
+              <th scope="col">ORB</th>
+              <th scope="col">DRB</th>
+              <th scope="col">REB</th>
+              <th scope="col">AST</th>
+              <th scope="col">STL</th>
+              <th scope="col">BLK</th>
+              <th scope="col">TOV</th>
+              <th scope="col">PF</th>
+              <th scope="col">+/-</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">{{RecentGame.6}}</th>
+              <th scope="col">{{RecentGame.24}}</th>
+              <th scope="col">{{RecentGame.7}}-{{RecentGame.8}}</th>
+              <th scope="col">{{RecentGame.10}}-{{RecentGame.11}}</th>
+              <th scope="col">{{RecentGame.13}}-{{RecentGame.14}}</th>
+              <th scope="col">{{RecentGame.16}}</th>
+              <th scope="col">{{RecentGame.17}}</th>
+              <th scope="col">{{RecentGame.18}}</th>
+              <th scope="col">{{RecentGame.19}}</th>
+              <th scope="col">{{RecentGame.20}}</th>
+              <th scope="col">{{RecentGame.21}}</th>
+              <th scope="col">{{RecentGame.22}}</th>
+              <th scope="col">{{RecentGame.23}}</th>
+              <th scope="col">{{RecentGame.25}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <br />
+      <div class="row">
+        <p class="bold">{{SeasonYear}} {{SeasonType}} Stats</p>
+        <br />
+        <table class="table table-dark">
+          <thead>
+            <tr>
+              <th scope="col">Games Played</th>
+              <th scope="col">PTS</th>
+              <th scope="col">REB</th>
+              <th scope="col">AST</th>
+              <th scope="col">FG%</th>
+              <th scope="col">FG3%</th>
+              <th scope="col">FT%</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="col">{{CareerStats.6}}</th>
+              <th scope="col">{{PTS}}</th>
+              <th scope="col">{{REB}}</th>
+              <th scope="col">{{AST}}</th>
+              <th scope="col">{{CareerStats.11}}</th>
+              <th scope="col">{{CareerStats.14}}</th>
+              <th scope="col">{{CareerStats.17}}</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
-    <h2>Recent Game Stats</h2>
-    <p>{{Headers}}</p>
-    <table class="table table-dark recent">
-      <tbody>
-        <tr>
-          <th scope="row">Date</th>
-          <td>{{RecentGame.3}}</td>
-        </tr>
-        <tr>
-          <th scope="row">Matchup</th>
-          <td>{{RecentGame.4}}</td>
-        </tr>
-        <tr>
-          <th scope="row">Result</th>
-          <td>{{RecentGame.5}}</td>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    <table class="table table-dark recent">
-      <thead>
-        <tr>
-          <th scope="col">MIN</th>
-          <th scope="col">PTS</th>
-          <th scope="col">FGM-A</th>
-          <th scope="col">3PM-A</th>
-          <th scope="col">FTM-A</th>
-          <th scope="col">ORB</th>
-          <th scope="col">DRB</th>
-          <th scope="col">REB</th>
-          <th scope="col">AST</th>
-          <th scope="col">STL</th>
-          <th scope="col">BLK</th>
-          <th scope="col">TOV</th>
-          <th scope="col">PF</th>
-          <th scope="col">+/-</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="col">{{RecentGame.6}}</th>
-          <th scope="col">{{RecentGame.24}}</th>
-          <th scope="col">{{RecentGame.7}}-{{RecentGame.8}}</th>
-          <th scope="col">{{RecentGame.10}}-{{RecentGame.11}}</th>
-          <th scope="col">{{RecentGame.13}}-{{RecentGame.14}}</th>
-          <th scope="col">{{RecentGame.16}}</th>
-          <th scope="col">{{RecentGame.17}}</th>
-          <th scope="col">{{RecentGame.18}}</th>
-          <th scope="col">{{RecentGame.19}}</th>
-          <th scope="col">{{RecentGame.20}}</th>
-          <th scope="col">{{RecentGame.21}}</th>
-          <th scope="col">{{RecentGame.22}}</th>
-          <th scope="col">{{RecentGame.23}}</th>
-          <th scope="col">{{RecentGame.25}}</th>
-        </tr>
-      </tbody>
-    </table>
-    <br />
-    {% for num in game_stats %}
-    <p>{{num}}</p>
-    {% endfor %}
-
-    <form>
-      <a href="{% url 'home' %}" class="btn btn-sm btn-info">Back</a>
-    </form>
   </body>
 </html>
