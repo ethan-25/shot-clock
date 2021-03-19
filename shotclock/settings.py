@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '8^25-9k&-x0s(t4)p2k5zn2r7+w(ih3nur!)684__b@b26&xe^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["shotclock-app.herokuapp.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
