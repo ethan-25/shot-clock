@@ -1,0 +1,63 @@
+body {
+  background-color: #10151c;
+  color: #f0f5f8;
+  font-family: "Inter", sans-serif;
+}
+
+.centered-column {
+  width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #f0f5f8;
+  box-shadow: 12px 12px #e52232;
+  color: #1a2129;
+}
+.centered-column h1 {
+  margin-left: 45%;
+  transform: translate(-25%, 0);
+}
+
+.sub {
+  margin-left: 45%;
+  transform: translate(-25%, 0);
+}
+
+.btn-danger {
+  border-color: #e52232;
+  background-color: #e52232;
+}
+
+.row-element {
+  padding: 10px;
+  color: #f0f5f8;
+  border-radius: 5px;
+  background-color: #1a2129;
+}
+
+.input-fields {
+  margin-left: 2.5rem;
+}
+
+/* View Player */
+.player-card {
+  width: 1000px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.player-headshot {
+  background-size: 5rem;
+  background-repeat: no-repeat;
+  background-position: 0 1rem;
+}
+
+.player-name {
+  font-size: 45px;
+  font-weight: 600;
+}
+
+.bold {
+  font-size: 30px;
+  font-weight: 600;
+}
