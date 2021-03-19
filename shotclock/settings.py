@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8^25-9k&-x0s(t4)p2k5zn2r7+w(ih3nur!)684__b@b26&xe^'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["shotclock-app.herokuapp.com"]
 
@@ -124,5 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+SITE_ROOT = 'info\static'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
