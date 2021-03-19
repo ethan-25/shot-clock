@@ -5,7 +5,7 @@ nba_players = players.get_players()
 nba_teams = teams.get_teams()
 
 
-async def get_player_info(player_id):
+def get_player_info(player_id):
     commoninfo = commonplayerinfo.CommonPlayerInfo(player_id=player_id)
 
     return {'commoninfo': commoninfo.get_dict()}
@@ -25,7 +25,7 @@ async def get_player_stats(player_id, season_year, season_type):
     return {'careerstats': season, 'PTS': "{:.1f}".format(ppg), 'AST': "{:.1f}".format(ast), 'REB': "{:.1f}".format(reb)}
 
 
-async def get_ids(player_name, team_name):
+def get_ids(player_name, team_name):
     player_info = [
         player for player in nba_players if player['full_name'] == player_name][0]
     player_id = player_info['id']
