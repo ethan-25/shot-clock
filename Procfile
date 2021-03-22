@@ -1,1 +1,0 @@
-web: gunicorn shotclock.wsgi --log-file -
